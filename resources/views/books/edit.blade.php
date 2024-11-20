@@ -55,6 +55,13 @@
                                         <option value="{{ $key }}">{{ $value }}</option>
                                     @endif
                                 @endforeach
+                                @foreach ($bookshelves as $key => $value)
+                                    @if (old('bookshelf_id') == $value->id)
+                                        <option value="{{ $value->id }}" selected>{{ $value->code.' - '.$value->name }}</option>
+                                    @else
+                                        <option value="{{ $value->id }}" selected>{{ $value->code.' - '.$value->name }}</option>
+                                    @endif
+                                @endforeach
                             </x-select-input>
                         </div>
                         <div class="max-w-xl">
